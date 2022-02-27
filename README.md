@@ -1,5 +1,12 @@
 # Taskell
 
+Add .env file at root with :
 
-
-npm i react-native-dotenv
+```
+APIKEY="REDACTED"
+AUTHDOMAIN="REDACTED"
+PROJECTID="REDACTED"
+STORAGEBUCKET="REDACTED"
+MESSAGINGSENDERID="REDACTED"
+APPID="REDACTED"
+```
