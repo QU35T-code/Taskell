@@ -1,11 +1,21 @@
 import React from "react";
-import { View, StyleSheet, SafeAreaView } from "react-native";
+import {
+  View,
+  StyleSheet,
+  SafeAreaView,
+  KeyboardAvoidingView,
+} from "react-native";
 
 const Container = (props) => {
   return (
-    <SafeAreaView style={styles.global}>
-      <View style={styles.container}>{props.children}</View>
-    </SafeAreaView>
+    <KeyboardAvoidingView
+      style={styles.global}
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+    >
+      <SafeAreaView>
+        <View style={styles.container}>{props.children}</View>
+      </SafeAreaView>
+    </KeyboardAvoidingView>
   );
 };
 
@@ -17,6 +27,7 @@ const styles = StyleSheet.create({
     backgroundColor: "black",
   },
   container: {
+    minWidth: 352,
     height: "95%",
     marginRight: "auto",
     marginLeft: "auto",

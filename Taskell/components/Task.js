@@ -2,11 +2,8 @@ import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
 import React from "react";
 
 const Task = (props) => {
-  const handleDelete = () => {
-    alert("Are you sure to delete this note ?");
-  };
   return (
-    <TouchableOpacity onPress={handleDelete}>
+    <TouchableOpacity onPress={props.press}>
       <View style={styles.container}>
         <View style={styles.subContainer}>
           <View style={styles.firstElement}>

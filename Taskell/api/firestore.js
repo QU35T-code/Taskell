@@ -9,7 +9,7 @@ export function addTask(name, userID) {
       userID: userID,
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
     })
-    .then((data) => console.log(data))
+    .then((data) => {})
     .catch((error) => console.log(error));
 }
 
@@ -20,14 +20,12 @@ export async function getTasks(userID) {
     .collection("Tasks")
     .where("userID", "==", userID)
     .get();
-  snapshot
-    .forEach((doc) => {
-      taskList.push(doc.data().name);
-    })
-    return taskList;
+  snapshot.forEach((doc) => {
+    taskList.push({ id: doc.id, name: doc.data().name });
+  });
+  return taskList;
+}
 
-    // .then((res) => {
-    //   return taskList;
-    // })
-    // .catch((error) => console.log(error));
+export function deleteTask(docID) {
+  firebase.firestore().collection("Tasks").doc(docID).delete();
 }

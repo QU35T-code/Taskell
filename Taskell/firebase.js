@@ -1,6 +1,4 @@
 import * as firebase from "firebase";
-// var admin = require("firebase-admin");
-
 import {
   APIKEY,
   AUTHDOMAIN,
@@ -18,14 +16,6 @@ const firebaseConfig = {
   messagingSenderId: MESSAGINGSENDERID,
   appId: APPID,
 };
-
-
-
-// var serviceAccount = require("./api/taskell.json");
-
-// admin.initializeApp({
-//   credential: admin.credential.cert(serviceAccount)
-// });
 
 let app;
 if (firebase.apps.length === 0) {
